@@ -9,3 +9,6 @@ returns information about each mirrored repository that currently is not working
 
 ## `getFiles.py` 
 should be run on an Artifactory instance to return every *file* inside of your instance, and its direct parent directory. prompts you for a parent directory and a specific path, if you want to get an overview of a specific area of your Artifactory instance.
+
+## `purgeFiles.py`
+An extension of `getFiles.py`. This script will traverse every single object in an Artifactory instance, and if they are marked with a particular property and have a age (in days) larger than their property value, they will be deleted from the artifactory instance. Great for cleanup and expulsion of old, outdated files. 
