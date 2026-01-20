@@ -15,3 +15,6 @@ should be run on an Artifactory instance to return every *file* inside of your i
 
 ## `purgeFiles.py`
 An extension of `getFiles.py`. This script will traverse every single object in an Artifactory instance, and if they are marked with a particular property and have a age (in days) larger than their property value, they will be deleted from the artifactory instance. Great for cleanup and expulsion of old, outdated files. 
+
+## `weeklytask.py
+A script that generates a template `.md` file to visualize my work week. Displays event hours and office hours that I fill in later. Meant to quickly generate the template with weekdates already inputted. Great for lazy people. 
