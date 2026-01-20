@@ -97,10 +97,10 @@ with open("weekly.md", "w") as weeklyFile:
     weeklyFile.write("Total: \n\n")
 
     weeklyFile.write("Required Office Hours: \n\n")
-    weeklyFile.write(f"Monday {weekdayDates[1]}:\n")
-    weeklyFile.write(f"Tuesday {weekdayDates[2]}:\n")
-    weeklyFile.write(f"Wednesday {weekdayDates[3]}:\n")
-    weeklyFile.write(f"Thursday {weekdayDates[4]}:\n")
-    weeklyFile.write(f"Friday {weekdayDates[5]}:\n")
+    weeklyFile.write(f"- [ ] Monday {weekdayDates[1]}:\n")
+    weeklyFile.write(f"- [ ] Tuesday {weekdayDates[2]}:\n")
+    weeklyFile.write(f"- [ ] Wednesday {weekdayDates[3]}:\n")
+    weeklyFile.write(f"- [ ] Thursday {weekdayDates[4]}:\n")
+    weeklyFile.write(f"- [ ] Friday {weekdayDates[5]}:\n")
     
 
