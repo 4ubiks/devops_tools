@@ -1,4 +1,4 @@
-# A script to generate a 'Weekly' template file to track my work hours. 
+# A script to generate a 'Weekly' template file to track my CP hours. 
 # Template: 
 
 # # X/XX/XXXX - X/XX/XXXX
@@ -27,43 +27,52 @@ monthDate = startDateFmt.month
 weekdayNumbers = [0, 1, 2, 3, 4, 5, 6]
 weekdayDates = ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a"]
 
-def startDate(weekday, weekdateInt, todayDate, dater):
+def startDate(weekday, weekdateInt, todayDate):
     delta_days = weekday - weekdateInt
     startDate = todayDate + timedelta(days=delta_days)
     dater = str(monthDate) + "/" + str(startDate.day) 
     return dater
 
+print(weekdateInt)
 match weekdateInt:
     case 0:
-        startDateFmt = startDate(weekdayNumbers[0], weekdateInt, startDateFmt)
+        # startDateFmt = startDate(weekdayNumbers[0], weekdateInt, startDateFmt)
+        weekdayNumbers = [-1, 0, 1, 2, 3, 4, 5]
+        counter = 0
+        for weekday in weekdayNumbers:
+            weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt)
+            counter+=1
+        startDateFmt = str(weekdayDates[1]) + "/2026"
+        endDateFmt = str(weekdayDates[5]) + "/2026"
+
     case 1:
         weekdayNumbers = [-1, 0, 1, 2, 3, 4, 5]
-        counter = 0;
+        counter = 0
         for weekday in weekdayNumbers:
-            weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt, weekdayDates[counter])
+            weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt)
             counter+=1
-        startDateFmt = startDateFmt + timedelta(days=(0-weekdateInt))
-        endDateFmt = startDateFmt + timedelta(days=(5-weekdateInt))
+        startDateFmt = str(weekdayDates[0]) + "/2026"
+        endDateFmt = str(weekdayDates[4]) + "/2026"
             
     case 2:
         weekdayNumbers = [-1, 0, 1, 2, 3, 4, 5]
-        counter = 0;
+        counter = 0
         for weekday in weekdayNumbers:
-            weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt, weekdayDates[counter])
+            weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt)
             counter+=1
-        startDateFmt = startDateFmt + timedelta(days=(1-weekdateInt))
-        endDateFmt = startDateFmt + timedelta(days=(4-weekdateInt))
+        startDateFmt = str(weekdayDates[-1]) + "/2026"
+        endDateFmt = str(weekdayDates[3]) + "/2026"
     case 3:
         weekdayNumbers = [-1, 0, 1, 2, 3, 4, 5]
-        counter = 0;
+        counter = 0
         for weekday in weekdayNumbers:
-            weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt, weekdayDates[counter])
+            weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt)
             counter+=1
-        startDateFmt = startDateFmt + timedelta(days=(2-weekdateInt))
-        endDateFmt = startDateFmt + timedelta(days=(3-weekdateInt))
+        startDateFmt = str(weekdayDates[-2]) + "/2026"
+        endDateFmt = str(weekdayDates[2]) + "/2026"
     case 4:
         weekdayNumbers = [-1, 0, 1, 2, 3, 4, 5]
-        counter = 0;
+        counter = 0
         for weekday in weekdayNumbers:
             weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt, weekdayDates[counter])
             counter+=1
@@ -72,7 +81,7 @@ match weekdateInt:
         
     case 5:
         weekdayNumbers = [-1, 0, 1, 2, 3, 4, 5]
-        counter = 0;
+        counter = 0
         for weekday in weekdayNumbers:
             weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt, weekdayDates[counter])
             counter+=1
@@ -80,7 +89,7 @@ match weekdateInt:
         endDateFmt = startDateFmt + timedelta(days=(1-weekdateInt))
     case 6:
         weekdayNumbers = [-1, 0, 1, 2, 3, 4, 5]
-        counter = 0;
+        counter = 0
         for weekday in weekdayNumbers:
             weekdayDates[counter] = startDate(weekday, weekdateInt, startDateFmt, weekdayDates[counter])
             counter+=1
